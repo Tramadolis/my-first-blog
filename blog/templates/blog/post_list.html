@@ -1,16 +1,11 @@
-<html>
-    <head>
-      <title>Tramadolio naktys</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">Emilijos Blog'as</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Tramadalio naktys</a></h1>
+</div>
 
-        <div>
-            <p>publikuota: shiandien 15:20<p/>
-            <h2><a href="">Mano pirmas irashas,</a></h2>
-            <p>Sedzhiu ant kedes visishkai susikuprinus</p>
-        </div>
-      <body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
